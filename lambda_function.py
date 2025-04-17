@@ -2,13 +2,13 @@ import json
 import pymysql
 import os
 import datetime
-
+# Configuración de la base de datos
 def get_connection():
     return pymysql.connect(
-        host=os.getenv("DB_HOST", "database-1.c1g2uk2iczzf.us-east-2.rds.amazonaws.com"),
-        user=os.getenv("DB_USER", "admin"),
-        password=os.getenv("DB_PASSWORD", "bigotes007"),
-        database=os.getenv("DB_NAME", "inventario_db"),
+        host=os.getenv("DB_HOST", "database-1.c1g2uk2iczzf.us-east-2.rds.amazonaws.com"),   # Endpoint
+        user=os.getenv("DB_USER", "admin"),  # Usuario de MySQL
+        password=os.getenv("DB_PASSWORD", "bigotes007"),   # Contraseña de MySQL
+        database=os.getenv("DB_NAME", "inventario_db"),    # Nombre de la base de datos
         cursorclass=pymysql.cursors.DictCursor
     )
 
@@ -49,6 +49,7 @@ def get_categories():
         cursor.execute("SELECT * FROM categories")
         categories = cursor.fetchall()
     connection.close()
+     # Convertir todos los campos datetime a string ISO 8601
     for cat in categories:
         for key, value in cat.items():
             if isinstance(value, (datetime.datetime, datetime.date)):

@@ -25,4 +25,17 @@ pip install -r requirements.txt -t .
 2. Empaqueta y sube a Lambda.
 
 3. Prueba en Postman usando el endpoint de API Gateway.
-   https://oxkdhrzma6.execute-api.us-east-2.amazonaws.com/desarrollo/desarrollo
+   Endpoint principal:
+   https://oxkdhrzma6.execute-api.us-east-2.amazonaws.com/desarrollo
+
+   Endpoints de recursos        ojo!!!! (Remover espacios en blanco)
+   Productos:
+   https://oxkdhrzma6.execute-api.us-east-2.amazonaws.com/desarrollo/products
+   Categorias:
+   https://oxkdhrzma6.execute-api.us-east-2.amazonaws.com/desarrollo/categories
+   Proveedores:
+   https://oxkdhrzma6.execute-api.us-east-2.amazonaws.com/desarrollo/providers
+   Órdenes de compra:
+   https://oxkdhrzma6.execute-api.us-east-2.amazonaws.com/desarrollo/purchase_orders
+   Detalles de orden de compra:
+   https://oxkdhrzma6.execute-api.us-east-2.amazonaws.com/desarrollo/purchase_order_detail
